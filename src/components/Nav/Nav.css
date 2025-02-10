@@ -1,0 +1,86 @@
+.main-nav{
+    padding: 0.4rem;
+    font-size: 1rem;
+      color: rgb(77, 19, 5);
+  background-color: rgb(207, 185, 180);
+  position: relative;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
+    background-color: rgb(238, 215, 209);
+    padding: 0.4rem;
+}
+a{
+    color: rgb(77, 19, 5);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.sub-menu{
+    display: none;
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    background-color: rgb(238, 215, 209);
+    font-weight: 500;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.4rem 0.2rem rgb(77, 19, 5);
+    transition: all 0.3s ease-in-out;
+
+}
+   #menu:hover .sub-menu{
+       display: flex;
+   
+}
+.register,.cartNav{
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 400;
+    background-color: rgb(238, 215, 209);
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.4rem 0.2rem rgb(77, 19, 5);
+    transition: all 0.3s ease-in-out;
+   }
+    .register:hover,.cartNav:hover{
+        background-color: hsl(0, 0%, 100%);
+        color: rgb(121, 94, 87);
+    }
+.cartNav{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.media700{
+    justify-content: space-between;
+    align-items: last baseline;  
+     padding-right: 4rem; 
+    a{
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    .register,.cartNav{
+    padding: 1rem 1.9rem;
+    font-size: 1rem;
+    font-weight: 500;
+   }
+    .register:hover,.cartNav:hover{
+        background-color: hsl(0, 0%, 100%);
+        color: rgb(121, 94, 87);
+    }
+    .register{
+       position: absolute;
+       top: 0;
+         right: 2rem;
+    }
+    .cartNav{
+        margin-left: 6.5rem;
+        margin-right: 10rem;
+    }
+    hr{
+        width: 100%;
+        border: 0.1rem solid rgb(77, 19, 5);
+    }
+}

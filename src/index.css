@@ -4,14 +4,7 @@
   padding: 0;
 }
 :root{
-  --glow:0px 0px 30px #55f,0px 0px 10px #f55
-}
-
-body {
-  margin: 0;
-  min-width: 100vw;
-  min-height: 100dvh;
-  background-color: var(--glow);
+  font-size:62.5%;
 }
 
 button {

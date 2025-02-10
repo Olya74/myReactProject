@@ -1,18 +1,37 @@
-header{
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #1a1a1a;
-    color: white;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.main-head{
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding:  0.5rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100vw;
+   font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+  min-width: 9rem;
+  margin: 0 auto;
+ 
+}
+.logo{
+ text-shadow: 0.1rem 0.1rem 0.1rem #fff;
 }
 
 
+@media (min-width: 500px){
+  .main-head{
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 700px){
+  .main-head{
+    font-size: 2.5rem;
+    padding: 2rem;
+  }
+  
+}

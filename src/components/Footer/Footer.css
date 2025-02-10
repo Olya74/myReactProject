@@ -1,13 +1,16 @@
-footer{
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    background-color: #1a1a1a;
-    color: white;
-    font-size: 0.8em;
-    font-weight: 500;
-    font-family: inherit;
-    gap: 1rem;
+.main-footer{
+    color: #fff;
+    background: #000;
+     a{
+        color: #fff;
+        text-decoration: none;
+        i{
+           margin: 0 0.3rem;
+        }
+    } 
+   
+}
+section{
+    text-align: center;
+    padding:0.6rem;
 }

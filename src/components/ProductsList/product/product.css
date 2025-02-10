@@ -1,0 +1,14 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border: inset 0.3rem rgb(77, 19, 5);
+    border-radius: 5px;
+    margin: 10px;
+
+}
+
+
+

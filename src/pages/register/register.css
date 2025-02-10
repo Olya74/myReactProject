@@ -1,0 +1,8 @@
+.valid{
+    display: block;
+    color: green;
+    font-weight: bold;
+}
+.hide{
+    display: none;
+}

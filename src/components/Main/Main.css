@@ -1,8 +1,10 @@
-main{
-    grid-area: main;
-    padding: 1rem;
-    color:#fff;
-    background: #000;
-    border-radius: .7em;
-    box-shadow:var(--glow);
+.content {
+    color: rgb(56, 16, 16);
+}
+.content li{
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Pacifico', cursive;
+    box-shadow: 1px 1px 1px 1px rgb(77, 19, 5);
 }
