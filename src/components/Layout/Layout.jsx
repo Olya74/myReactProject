@@ -9,7 +9,7 @@ function Layout() {
   return (
     <div className="wrapper">
       <Header />
-      <Nav />
+       <Nav />
       <Aside2 />
       <Aside />
       <Main />

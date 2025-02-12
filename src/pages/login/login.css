@@ -1,20 +1,15 @@
-body{
-      background: linear-gradient(90deg in hsl shorter hue, rgb(213, 219, 212), rgb(201, 191, 197), rgb(211, 203, 196));
-     
-}
-.register{
-    font-size: 1.3rem;
-    margin-top: 8rem;
+.login{
+    font-size: 1.4rem;
+    margin-top: 14rem;
     font-weight: bold;
     text-align: center;
-     padding: 0.2rem 0.3rem;
- 
+     padding: 0.3rem ;
     background-color: rgb(238, 215, 209);
     border-radius: 0.4rem;
     box-shadow: 0 0 0.4rem 0.2rem rgb(235, 225, 222);
     transition: all 0.3s ease-in-out;
 }
-.register:hover{
+.login:hover{
     background-color: #f1f1f1;
     color: rgb(14, 5, 5);
 
@@ -29,33 +24,31 @@ button:hover{
     background-color: #f5e6e6;
 }
 @media (min-width: 300px){
-    .register{
+    .login{
         font-size: 1.5rem;
         margin-top: 12rem;
         padding: 1.5rem;
         transition: all 0.6s;
     }
     button{
-        padding: 1rem 1.5rem;
+        padding: 1rem 1.4rem;
         border-radius: 0.5rem;
         margin-top: 1rem;
         font-size: 1.5rem;
     }
-    .policy{
-       display: flex;
-         justify-content: space-between;
-         align-items: center;
-    }
 }
 @media (min-width: 500px){
-    .register{
+    .login{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 40%;
+        width: 60%;
         margin: 15rem auto;
         font-size: 2rem;
+    }
+    h3{
+        padding-bottom: 2rem;
     }
    form{
     width: fit-content;
@@ -66,14 +59,18 @@ button:hover{
         
     }
    button{
-        padding: 2rem 5rem;
+        padding: 1.5rem 4rem;
         border-radius: 0.5rem;
     }
     .question{
     position: absolute;
     top: 1rem;
-    right: 1rem;
+    right: 0.5rem;
     }
 }
 
-
+@media (min-width: 630px){
+    .login{
+        width: 30%;
+    }
+}

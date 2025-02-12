@@ -1,12 +1,17 @@
-import React from 'react'
-import ProductsList from '../ProductsList/ProductsList'
+import React, { useContext } from "react";
+import ProductsList from "../ProductsList/ProductsList";
+
+import { UserContext } from "../../contexts/UserContext";
+import "./aside.css";
+import Profile from "../../pages/profile/Profile";
 function Aside() {
+  const { users, dispatch } = useContext(UserContext);
   return (
     <aside className="side active">
-      <h1>ASIDE</h1>
-      <ProductsList />
+      <Profile />
+      {/* <ProductsList /> */}
     </aside>
   );
 }
 
-export default Aside
+export default Aside;

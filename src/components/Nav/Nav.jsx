@@ -48,16 +48,16 @@ const {width,isSM,isMD,isLG,isXL,isSearch,isXXL} = useResize();
             ) : (
               <i className="fa-solid fa-magnifying-glass"></i>
             )}
-            {/* <i className="fa-solid fa-magnifying-glass"></i> */}
           </NavLink>
         </li>
-        <li className="register">
-          <NavLink to="users/register">Sign Up</NavLink>
+
+        <li className="registerBtn">
+          <NavLink to="/register">Sign Up</NavLink>
           <br />
           <hr />
-          <NavLink to="users/login">Log In</NavLink>
+          <NavLink to="/login">Log In</NavLink>
         </li>
-        <li className="cartNav">
+        <li className="cartNavBtn">
           <NavLink to="/products">
             {isSM ? (
               <i className="fa-solid fa-cart-shopping"></i>
