@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+
 const app = express();
 const PORT = 5000;
 // Middleware
@@ -16,6 +17,7 @@ app.post("/register", (req, res) => {
   if (!name || !password || !email) {
     return res.status(400).json({ message: "All fields are required" });
   }
+  const dateAt=new Date().toString();
   // Read existing users
   fs.readFile(DATA_FILE, "utf8", (err, data) => {
     let users = [];
@@ -24,11 +26,10 @@ app.post("/register", (req, res) => {
     }
     // Check if user exists
     if (users.some((user) => user.email === email)) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: "User already exists" });  
     }
     // Add new user
-      
-     users.push({ name, password, email });
+     users.push({ name, password, email,dateAt });
     // Write to file
     fs.writeFile(DATA_FILE, JSON.stringify(users, null, 2), (err) => {
       if (err) {
@@ -38,6 +39,35 @@ app.post("/register", (req, res) => {
     });
   });
  });
+// Login user
+   app.post("/login",(req,res)=>{
+  const {email,password}=req.body;
+  if(!email || !password){
+    return res.status(400).json({message:"All fields are required"});
+  }
+  fs.readFile(DATA_FILE,"utf8",(err,data)=>{
+    if(err){
+      return res.status(500).json({message:"Error reading users"});
+    }
+    const users=JSON.parse(data);
+    const user=users.find((user)=>user.email===email && user.password===password);
+    if(!user){
+      return res.status(400).json({message:"Invalid credentials"});
+    }
+    res.json({message:"Login successful",name:user.name,dateAt:user.dateAt});
+  });
+});
+
+
+
+ app.get("/users", (req, res) => {
+  fs.readFile(DATA_FILE, "utf8", (err, data) => {
+    if (err) {
+      return res.status(500).json({ message: "Error reading users" });
+    }
+    res.json(JSON.parse(data));
+  });
+});
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );

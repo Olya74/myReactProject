@@ -4,11 +4,7 @@ import './ProductsList.css'
 function ProductsList() {
   return (
     <div className="ProductList">
-      <Product  />
-      <Product  />
-      <Product  />
-      <Product  />
-      <Product  />
+      <Product />
     </div>
   );
 }

@@ -8,8 +8,7 @@ function Aside() {
   const { users, dispatch } = useContext(UserContext);
   return (
     <aside className="side active">
-      <Profile />
-      {/* <ProductsList /> */}
+      <ProductsList />
     </aside>
   );
 }

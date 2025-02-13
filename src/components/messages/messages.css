@@ -1,0 +1,20 @@
+.success{
+     color: rgb(154, 207, 154); 
+    
+background-color: rgb(29, 21, 85);
+}.error{
+    color: red;
+    background-color: rgb(30, 21, 85);
+}
+
+.message{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    height:100%;
+    border:  4px solid rgb(121, 110, 115);
+    padding: 1rem 2.5rem;
+    
+}

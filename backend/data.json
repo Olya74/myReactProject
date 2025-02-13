@@ -1,3 +1,20 @@
 [
-  
+  {
+    "name": "Olga",
+    "password": "AAss!!!!11",
+    "email": "olyayoga74@gmail.com",
+    "dateAt": "Thu Feb 13 2025 17:07:28 GMT+0100 (Mitteleuropäische Normalzeit)"
+  },
+  {
+    "name": "IrynaTsaran",
+    "password": "QWEqwe!22",
+    "email": "irinazaran79@gmail.com",
+    "dateAt": "Thu Feb 13 2025 18:14:37 GMT+0100 (Mitteleuropäische Normalzeit)"
+  },
+  {
+    "name": "Liliya",
+    "password": "asdASD12!!!",
+    "email": "linlol220806@gmail.com",
+    "dateAt": "Thu Feb 13 2025 18:17:16 GMT+0100 (Mitteleuropäische Normalzeit)"
+  }
 ]
