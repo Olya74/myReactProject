@@ -54,7 +54,12 @@ app.post("/register", (req, res) => {
     if(!user){
       return res.status(400).json({message:"Invalid credentials"});
     }
-    res.json({message:"Login successful",name:user.name,dateAt:user.dateAt});
+    const userDto = { name: user.name, dateAt: user.dateAt};
+    // res.json({message:"Login successful",name:user.name,dateAt:user.dateAt});
+      res.json({
+        message: "Login successful",
+        user: userDto,
+      });
   });
 });
 
@@ -65,7 +70,11 @@ app.post("/register", (req, res) => {
     if (err) {
       return res.status(500).json({ message: "Error reading users" });
     }
-    res.json(JSON.parse(data));
+   const usersDto = JSON.parse(data);
+   usersDto.forEach((user) => {
+      delete user.password;
+    });
+    res.json({ usersDto});
   });
 });
 app.listen(PORT, () =>

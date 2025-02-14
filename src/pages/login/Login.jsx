@@ -2,15 +2,17 @@ import {useState ,useContext, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Error from '../../components/messages/Error'
 import Success from '../../components/messages/Success'
-import setMyTimeout from '../../hooks/setMyTimeout'
+import setMyTimeout from '../../helpers/setMyTimeout'
 import '../register/register.css'
 import './login.css'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
+import { UserContext } from '../../contexts/UserContext'
 
 
 function Login() {
     const navigate = useNavigate();
+  const { dispatch } = useContext(UserContext);
    const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -37,7 +39,8 @@ function Login() {
       }
 const data = await response.json();
  setSuccess(data.message);
-    
+ data.user.isLoggined=true;
+     dispatch({ type: "LOG_IN_USER", payload: data.user });
  }catch(error){
    console.error(error);
  }
@@ -45,8 +48,6 @@ const data = await response.json();
 
 
     return (
-      <div className="wrapper">
-        <Header />
         <div className="login">
           {myError && <Error myError={myError} />}
           {success && <Success success={success} />}
@@ -80,16 +81,11 @@ const data = await response.json();
                 required
               />
               <button
-              // onClick={(e) => {
-              //   dispatch({ type: "LOG_IN_USER", payload: login });
-              // }}
               >
                 Log In
               </button>
             </form>
           </section>
-        </div>
-        <Footer />
       </div>
     );
     

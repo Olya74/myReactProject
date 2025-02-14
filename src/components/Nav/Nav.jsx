@@ -1,12 +1,13 @@
-import {useState} from 'react'
 import './Nav.css'
 import { NavLink, Outlet } from 'react-router-dom';
 import { useResize } from '../../hooks/useResize';
 import Search from '../../pages/Search/Search';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 
 function Nav() {
-const {width,isSM,isMD,isLG,isXL,isSearch,isXXL} = useResize();
-
+const {isSM,isXL,isSearch} = useResize();
+const {state}=useContext(UserContext);
   return (
     <>
       <nav className="main-nav">

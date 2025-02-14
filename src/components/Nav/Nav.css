@@ -61,11 +61,11 @@ a{
         font-size: 2.5rem;
         font-weight: bold;
     }
-    .registerBtn,.cartNavBtn{
+    /* .registerBtn,.cartNavBtn{
     padding: 1rem 1.9rem;
     font-size: 1rem;
     font-weight: 500;
-   }
+   } */
     .registerBtn:hover,.cartNavBtn:hover{
         background-color: hsl(0, 0%, 100%);
         color: rgb(121, 94, 87);

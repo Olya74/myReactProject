@@ -3,11 +3,30 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
-    border: inset 0.3rem rgb(77, 19, 5);
+    padding: 1rem;
+    /* border: inset 0.3rem rgb(77, 19, 5); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
     margin: 10px;
-
+    color: rgb(77, 19, 5);
+    background-color: rgb(255, 255, 255);
+     /* background-color: rgb(239, 240, 235);  */
+    
+    transition: transform 0.3s;
+}
+.productsWraper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    padding: 2rem;
+}
+p{
+    font-size: 1.8rem;
+}
+.product:hover{
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 

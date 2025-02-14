@@ -1,9 +1,9 @@
 .login{
     font-size: 1.4rem;
-    margin-top: 14rem;
     font-weight: bold;
     text-align: center;
-     padding: 0.3rem ;
+     padding: 0.2rem ;
+    margin-top: 0.5rem;
     background-color: rgb(238, 215, 209);
     border-radius: 0.4rem;
     box-shadow: 0 0 0.4rem 0.2rem rgb(235, 225, 222);
@@ -19,6 +19,7 @@ button{
     border-radius: 0.5rem;
     margin-top: 1rem;
      background-color: #f1f1f1;
+    
 }
 button:hover{
     background-color: #f5e6e6;
@@ -26,9 +27,9 @@ button:hover{
 @media (min-width: 300px){
     .login{
         font-size: 1.5rem;
-        margin-top: 12rem;
         padding: 1.5rem;
         transition: all 0.6s;
+        margin:2rem auto;
     }
     button{
         padding: 1rem 1.4rem;
@@ -64,13 +65,26 @@ button:hover{
     }
     .question{
     position: absolute;
-    top: 10rem;
-    right: 0.5rem;
+    top: 12rem;
+    right: 0;
+  display: flex;
+  flex-direction: column;
     }
 }
 
-@media (min-width: 630px){
+@media (min-width:900px){
+    .login{
+        width: 50%;
+    }
+}
+
+@media (min-width:1100px){
     .login{
         width: 30%;
+        padding: 2rem;
     }
+  button{
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }

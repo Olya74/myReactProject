@@ -1,28 +1,23 @@
 import { createContext, useEffect, useReducer } from "react";
+import { getUsers } from "../helpers/functions.js";
 
-
-//  return {
-//    ...state,
-//    users: [
-//      ...state.users,
-//      {
-//        name: action.payload,
-//        isLoggined: true,
-//      },
-//    ],
-//  };
-    
 export const UserContext = createContext(null);
 
+// getUsers("http://localhost:5000/users/");
 
 const initialState = {
-  users:[],
+  users: [],
 };
 
 
 const reducer = (state, action) => {
+console.log('state:',state);
+console.log('action:',action);
   switch (action.type) {
-    case "LOG_IN_USER":
+    case "LOG_IN_USER":{
+  const user=action.payload;
+    }
+    
     default:
       return state;
   }

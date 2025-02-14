@@ -1,13 +1,16 @@
 import React from 'react'
-import Layout from '../../components/Layout/Layout'
+import Aside from '../../components/aside/Aside'
+import Aside2 from '../../components/aside/Aside2'
+import Main from '../../components/Main/Main'
 
 function Home() {
-  return ( 
-    <div>
-        <Layout />
-    </div>
-  
-  )
+  return (
+    <>
+      <Aside2 />
+      <Aside />
+      <Main />
+    </>
+  );
 }
 
 export default Home

@@ -1,6 +1,6 @@
 import "./register.css";
 import { useState, useContext, useEffect, use } from "react";
-import setMyTimeout from "../../hooks/setMyTimeout";
+import setMyTimeout from "../../helpers/setMyTimeout";
 import Success from "../../components/messages/Success";
 import Error from "../../components/messages/Error";
 import { useNavigate } from "react-router-dom";
@@ -9,8 +9,8 @@ import Header from "../../components/Header/Header";
 
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-const PASSWORD_REGEX =/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-
+const PASSWORD_REGEX =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function Register() {
   const navigate = useNavigate();
@@ -19,17 +19,17 @@ function Register() {
     email: "",
     password: "",
   });
-const [confirmPassword, setConfirmPassword] = useState("");
-const [myError, setMyError] = useState("");
-const [success, setSuccess] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [myError, setMyError] = useState("");
+  const [success, setSuccess] = useState("");
 
-useEffect(() => {
-  const timeout = setTimeout(() => {
-    setMyError("");
-    setSuccess("");
-  }, 2000);
-  return () => clearTimeout(timeout);
-}, [myError, success]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setMyError("");
+      setSuccess("");
+    }, 2000);
+    return () => clearTimeout(timeout);
+  }, [myError, success]);
 
   const sendUser = async (user) => {
     const { name, email, password } = user;
@@ -55,7 +55,7 @@ useEffect(() => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
-      })
+      });
 
       if (!response.ok) {
         setMyError("User already exists");
@@ -63,76 +63,75 @@ useEffect(() => {
       }
       const data = await response.json();
       setSuccess(data.message);
-    setMyTimeout(() => navigate("/"), 2200);
+      setMyTimeout(() => navigate("/"), 2200);
     } catch (error) {
       console.error(error);
-  }
+    }
   };
 
   return (
-     <div className="wrapper">
-      <Header />
-    <div className="register">
-      {myError && <Error myError={myError} />}
-      {success && <Success success={success} />}
-      <div className="question">
-        Have an account?<button onClick={(e)=>navigate('/login')}>Log in</button>
-      </div>
-      <section>
-        <h2>Create a account</h2>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            sendUser(newUser);
-          }}
-        >
-          <input id="1" hidden />
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="userName"
-            name={newUser.name}
-            onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
-            required
-          />
-          <label htmlFor="useremail">Email:</label>
-          <input
-            type="email"
-            id="useremail"
-            name={newUser.email}
-            onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-            required
-          />
-          <label htmlFor="userpassword">Password:</label>
-          <input
-            type="text"
-            // type="password"
-            id="userpassword"
-            name={newUser.password}
-            onChange={(e) =>
-              setNewUser({ ...newUser, password: e.target.value })
-            }
-            required
-          />
-          <label htmlFor="confirmPassword">Confirm Password:</label>
-          <input
-            type="text"
-            //  type="password"
-            id="confirmPassword"
-            name={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-          <div className="policy">
-            <input type="checkbox" /> I agree to the Terms of Service and
-            Privacy Policy
-          </div>
-          <button>Sign Up</button>
-        </form>
-      </section>
+      <div className="register">
+        {myError && <Error myError={myError} />}
+        {success && <Success success={success} />}
+        <div className="question">
+          Have an account?
+          <button onClick={(e) => navigate("/login")}>Log in</button>
+        </div>
+        <section>
+          <h2>Create a account</h2>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              sendUser(newUser);
+            }}
+          >
+            <input id="1" hidden />
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="userName"
+              name={newUser.name}
+              onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+              required
+            />
+            <label htmlFor="useremail">Email:</label>
+            <input
+              type="email"
+              id="useremail"
+              name={newUser.email}
+              onChange={(e) =>
+                setNewUser({ ...newUser, email: e.target.value })
+              }
+              required
+            />
+            <label htmlFor="userpassword">Password:</label>
+            <input
+              type="text"
+              // type="password"
+              id="userpassword"
+              name={newUser.password}
+              onChange={(e) =>
+                setNewUser({ ...newUser, password: e.target.value })
+              }
+              required
+            />
+            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <input
+              type="text"
+              //  type="password"
+              id="confirmPassword"
+              name={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <div className="policy">
+              <input type="checkbox" /> I agree to the Terms of Service and
+              Privacy Policy
+            </div>
+            <button>Sign Up</button>
+          </form>
+        </section>
     </div>
-    <Footer />
-  </div>
   );
 }
 
