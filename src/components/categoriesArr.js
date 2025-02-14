@@ -25,7 +25,7 @@ export default [
         img: ["/src/assets/images/S2.jpeg"],
       },
       {
-        id: 3,
+        id: 4,
         name: "Lorem ipsum dolor sit amet",
         price: "£41.96",
         color: ["red", "wine-beige"],
@@ -38,6 +38,14 @@ export default [
     id: 2,
     category: "pillow",
     items: [
+      {
+        id: 1,
+        name: "New Year towels",
+        price: "£41.96",
+        color: ["red", "wine-beige"],
+        size: ["50x70", "medium", " large"],
+        img: ["/src/assets/images/T1.webp"],
+      },
       {
         id: 2,
         name: "Terry towels",
@@ -88,14 +96,6 @@ export default [
         id: 9,
         name: "Accessories",
         price: "£11.05",
-        img: ["/src/assets/images/T1.webp"],
-      },
-      {
-        id: 1,
-        name: "New Year towels",
-        price: "£41.96",
-        color: ["red", "wine-beige"],
-        size: ["50x70", "medium", " large"],
         img: [
           "/src/assets/images/P1_1.png",
           "/src/assets/images/P1_2.png",
