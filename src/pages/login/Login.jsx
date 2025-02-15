@@ -38,8 +38,8 @@ function Login() {
         throw new Error(`status: ${response.status}`);
       }
 const data = await response.json();
+if(!data.user){setMyError('User not found');return;}
  setSuccess(data.message);
- data.user.isLoggined=true;
      dispatch({ type: "LOG_IN_USER", payload: data.user });
  }catch(error){
    console.error(error);

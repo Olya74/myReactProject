@@ -1,19 +1,19 @@
 import "./register.css";
-import { useState, useContext, useEffect, use } from "react";
+import { useState, useEffect,useContext } from "react";
 import setMyTimeout from "../../helpers/setMyTimeout";
 import Success from "../../components/messages/Success";
 import Error from "../../components/messages/Error";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import { UserContext } from "../../contexts/UserContext";
 
-const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
+const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{2,23}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 const PASSWORD_REGEX =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function Register() {
   const navigate = useNavigate();
+  const {dispatch}=useContext(UserContext);
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -62,6 +62,12 @@ function Register() {
         throw new Error(`status: ${response.status}`);
       }
       const data = await response.json();
+      if(response.status===201){
+       dispatch({ type: "REGISTER", payload: {name:newUser.name,email:newUser.email} });
+      }
+     
+      
+     
       setSuccess(data.message);
       setMyTimeout(() => navigate("/"), 2200);
     } catch (error) {

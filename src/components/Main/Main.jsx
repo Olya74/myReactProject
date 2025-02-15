@@ -1,12 +1,16 @@
-import React from 'react'
-import './Main.css'
+import {useState} from 'react'
+import './main.css'
 import ProductsList from '../ProductsList/ProductsList'
+import Categories from '../categories/Categories';
+import categoriesArr from '../categoriesArr.js'
 function Main() {
+ 
   return (
     <main className="content">
+      <Categories />
       <ProductsList />
       <article>
-        <h3>Полотенца оптом﻿</h3>
+        <h3>Towels wholesale</h3>
         <p>
           Интернет-магазин «Оба-на» предлагает купить полотенца оптом в Одессе,
           Херсоне, Киеве и других городах Украины. Мы работаем с ФЛП,

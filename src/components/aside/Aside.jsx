@@ -3,16 +3,14 @@ import ProductsList from "../ProductsList/ProductsList";
 import { UserContext } from "../../contexts/UserContext";
 import "./aside.css";
 import Profile from "../../pages/profile/Profile";
+import Categories from "../categories/Categories";
 function Aside() {
-  const { users, dispatch } = useContext(UserContext);
-console.log('users:',users.islogined);
+  const { state, dispatch } = useContext(UserContext);
+
 
   return (
     <aside className="side active">
-      {
-        
-      }
-      <ProductsList />
+      {state.isLogginned && <Profile />}
     </aside>
   );
 }

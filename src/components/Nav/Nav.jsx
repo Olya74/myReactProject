@@ -34,6 +34,13 @@ const {state}=useContext(UserContext);
               {isXL ? "Home" : <i className="fa-solid fa-house"></i>}
             </NavLink>
           </li>
+          {state.isLogginned && (
+            <NavLink to="/users/:new" className="myAccount">
+              {" "}
+              {isXL ? "My Account" : <i className="fa-solid fa-user"></i>}
+            </NavLink>
+          )}
+
           <li>
             <NavLink to="/contact" id="contact">
               {" "}
@@ -57,7 +64,13 @@ const {state}=useContext(UserContext);
             <NavLink to="/register">Sign Up</NavLink>
             <br />
             <hr />
-            <NavLink to="/login">Log In</NavLink>
+            {state.isLogginned ? (
+              <NavLink onClick={() => dispatchEvent({ type: "LOG_OUT" })}>
+                Log Out
+              </NavLink>
+            ) : (
+              <NavLink to="/login">Log In</NavLink>
+            )}
           </li>
           <li className="cartNavBtn">
             <NavLink to="/products">

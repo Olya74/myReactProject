@@ -80,11 +80,7 @@ export default [
         id: 7,
         name: "New Year bed linen",
         price: "£21.05",
-        img: [
-          "/src/assets/images/P1_1.png",
-          "/src/assets/images/P1_2.png",
-          "/src/assets/images/P1_3.png",
-        ],
+        img: ["/src/assets/images/B.png"],
       },
       {
         id: 8,
@@ -96,12 +92,12 @@ export default [
         id: 9,
         name: "Accessories",
         price: "£11.05",
-        img: [
-          "/src/assets/images/P1_1.png",
-          "/src/assets/images/P1_2.png",
-          "/src/assets/images/P1_3.png",
-        ],
+        img: ["/src/assets/images/b2.jpg"],
       },
     ],
+  },
+  {
+    id: 3,
+    category: "towels",
   },
 ];

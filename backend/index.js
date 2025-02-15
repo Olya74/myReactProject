@@ -17,10 +17,11 @@ app.post("/register", (req, res) => {
   if (!name || !password || !email) {
     return res.status(400).json({ message: "All fields are required" });
   }
-  const dateAt=new Date().toString();
+  const dateAt=new Date();
   // Read existing users
   fs.readFile(DATA_FILE, "utf8", (err, data) => {
     let users = [];
+    
     if (!err && data) {
       users = JSON.parse(data);
     }
@@ -28,6 +29,7 @@ app.post("/register", (req, res) => {
     if (users.some((user) => user.email === email)) {
       return res.status(400).json({ message: "User already exists" });  
     }
+    
     // Add new user
      users.push({ name, password, email,dateAt });
     // Write to file
@@ -54,7 +56,8 @@ app.post("/register", (req, res) => {
     if(!user){
       return res.status(400).json({message:"Invalid credentials"});
     }
-    const userDto = { name: user.name, dateAt: user.dateAt};
+    const userDto = structuredClone(user);
+    delete userDto.password;
     // res.json({message:"Login successful",name:user.name,dateAt:user.dateAt});
       res.json({
         message: "Login successful",
@@ -77,6 +80,22 @@ app.post("/register", (req, res) => {
     res.json({ usersDto});
   });
 });
+
+const DATA_PRODUCTS_FILE = path.join(__dirname, "data/products.json");
+ app.get("/products", (req, res) => {
+   fs.readFile(DATA_PRODUCTS_FILE, "utf8", (err, data) => {
+    let products = [];
+      if (!err && data) {
+        products = JSON.parse(data);
+      }
+    
+    
+      res.json( products );
+   });
+ });
+
+
+
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );

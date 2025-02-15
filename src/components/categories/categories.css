@@ -1,0 +1,22 @@
+.content .category-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    gap: 1rem;
+    text-align: center;
+}
+  .content .category-list li{
+    text-wrap: nowrap;
+       flex:1 1 20%;
+}
+
+@media (min-width: 700px) {
+     .content .category-list {
+   
+}
+   .content .category-list li{
+    flex-basis: 15%;
+}
+}

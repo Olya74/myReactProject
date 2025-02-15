@@ -1,27 +1,53 @@
-import React from 'react'
+import {useContext} from 'react'
+import { UserContext } from '../../../contexts/UserContext'
 import  './product.css'
-import categoriesArr from '../../categoriesArr.js'
+
+
 function Product() {
+  const { state,dispatch } = useContext(UserContext);
   return (
     <div className="productsWraper">
-      {categoriesArr.map(
-        (category) =>
-          Object.keys(category).includes("items") &&
-          category.items.map((item) => (
-            <div className="product" key={item.id}>
-              <h6>{item.name}</h6>
-              {item.img && (
-                <img
-                  src={item.img[0]}
-                  alt={item.name}
-                  style={{ width: "100px", height: "100px" }}
-                />
-              )}
-              <p>{item.price}</p>
-            </div>
-          ))
-      )}
+      {state.currentItems.length > 0 &&
+        state.currentItems.map(
+          (itemsPr) =>
+            Object.keys(itemsPr).includes("items") &&
+            itemsPr.items.map((item) => (
+              <div className="product" key={item.id}>
+                <h6>{item.name}</h6>
+                {item.img && <img src={item.img[0]} alt={item.name} />}
+                <p>{item.price}</p>
+                <button
+                  onClick={() =>
+                    dispatch({ type: "ADD_PRODUCT", payload: item })
+                  }
+                >
+                  Add to cart
+                </button>
+              </div>
+            ))
+        )}
     </div>
+    // <div className="productsWraper">
+    //   {state.products.length > 0 &&
+    //     state.products.map(
+    //       (itemsPr) =>
+    //         Object.keys(itemsPr).includes("items") &&
+    //         itemsPr.items.map((item) => (
+    //           <div className="product" key={item.id}>
+    //             <h6>{item.name}</h6>
+    //             {item.img && <img src={item.img[0]} alt={item.name} />}
+    //             <p>{item.price}</p>
+    //             <button
+    //               onClick={() =>
+    //                 dispatch({ type: "ADD_PRODUCT", payload: item })
+    //               }
+    //             >
+    //               Add to cart
+    //             </button>
+    //           </div>
+    //         ))
+    //     )}
+    // </div>
   );
 }
 

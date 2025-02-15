@@ -5,13 +5,13 @@ function Footer() {
     <footer className="main-footer">
       <section>
         <p>Textile</p>
-        <p>Интернет-магазин домашнего текстиля</p>
+        <p>Online store of home textiles</p>
         <p>Main Street 123</p>
         <p>1234 Berlin</p>
       </section>
       <section>
-        <p>Контакты</p>
-        <p>Телефон: +49 123 456 789</p>
+        <p>Contacts</p>
+        <p>Phone: +49 123 456 789</p>
         <p>Email: </p>
       </section>
       <section>

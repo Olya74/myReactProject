@@ -8,7 +8,6 @@ import Layout from "./components/Layout/Layout";
 import UserList from "./pages/users/UserList";
 function App() {
 
-
   return (
     <>
       <Routes>

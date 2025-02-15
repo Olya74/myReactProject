@@ -1,0 +1,23 @@
+.content {
+    color: rgb(56, 16, 16);
+    text-indent: 1rem;
+   
+}
+.content ul{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+      background-color: rgb(255, 255, 255);
+}
+.content h3{
+    font-size: 2rem;
+    text-align: center;
+}
+.content li{
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    box-shadow: 1px 1px 1px 1px rgb(77, 19, 5);
+    background-color: rgb(255, 255, 255);
+     text-indent: 0;
+}
