@@ -1,8 +1,10 @@
 import {useContext} from 'react'
 import { UserContext } from '../../contexts/UserContext'
 import './profile.css'
+
+
 function Profile() {
-  const { state, dispatch } = useContext(UserContext);
+  const { state} = useContext(UserContext);
   return (
     <div className="profile">
         <h3>My Account</h3>

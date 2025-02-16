@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
-import ProductsList from "../ProductsList/ProductsList";
 import { UserContext } from "../../contexts/UserContext";
 import "./aside.css";
 import Profile from "../../pages/profile/Profile";
-import Categories from "../categories/Categories";
+import ShoppingCart from "../cart/ShopingCart";
+
 function Aside() {
-  const { state, dispatch } = useContext(UserContext);
+  const { state } = useContext(UserContext);
 
 
   return (
     <aside className="side active">
-      {state.isLogginned && <Profile />}
+      <div id='side' >
+        {state.isLogginned && <Profile />}
+        <ShoppingCart />
+      </div>
     </aside>
   );
 }

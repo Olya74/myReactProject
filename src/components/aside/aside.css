@@ -1,5 +1,47 @@
-.side{
-   display: flex;
-   justify-content: space-between;
-   align-items: start;
+#side{
+     display: flex;
+     flex-direction: column;
+}
+
+#side .cart{
+  text-wrap: wrap; 
+}
+
+@media (min-width: 300px) {
+    #side{
+        display: flex;
+        text-wrap: wrap;
+        flex-direction: column;
+    }
+    #side .cart{
+        display: flex;
+        flex-wrap: wrap;
+      width: 138px;
+  overflow-x: hidden;
+    padding-left: 0;
+    word-break: break-all;
+}
+}
+
+@media (min-width: 500px) {
+    #side{
+       margin-top: 1rem;
+       flex-direction: column-reverse;
+    }
+}
+
+@media (min-width: 700px) {
+    #side{
+        display: block;
+margin-top: -1rem;
+margin-left: 1.5rem;
+    }
+     #side .cart{
+    width: fit-content;
+}
+}
+.ad {
+    box-shadow: inset 0 0 0 2px #333;
+    padding: 1rem;
+    color: #333;
 }

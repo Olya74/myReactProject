@@ -4,14 +4,16 @@ import { useResize } from '../../hooks/useResize';
 import Search from '../../pages/Search/Search';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
+import ShoppingCart from '../cart/ShopingCart';
 
 function Nav() {
 const {isSM,isXL,isSearch} = useResize();
 const {state}=useContext(UserContext);
+
   return (
     <>
       <nav className="main-nav">
-        <ul className={isXL ? "media700" : ""}>
+        <ul className={isXL ? "media700 cartOder" : ""}>
           {isXL ? (
             ""
           ) : (
@@ -20,7 +22,11 @@ const {state}=useContext(UserContext);
               <ul className="sub-menu">
                 <li>
                   {" "}
-                  <NavLink to="/">Home Textille</NavLink>
+                  <NavLink to="/">Blanket</NavLink>
+                </li>
+                <li>
+                  {" "}
+                  <NavLink to="/">Bed linen</NavLink>
                 </li>
                 <li>
                   {" "}
@@ -73,7 +79,10 @@ const {state}=useContext(UserContext);
             )}
           </li>
           <li className="cartNavBtn">
-            <NavLink to="/products">
+            <span className="totalQuantity">
+              {!state.isEmpty && state.totalQuantity}
+            </span>
+            <NavLink to="/">
               {isSM ? (
                 <i className="fa-solid fa-cart-shopping"></i>
               ) : (

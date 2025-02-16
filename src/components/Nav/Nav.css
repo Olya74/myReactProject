@@ -5,6 +5,7 @@
   background-color: rgb(207, 185, 180);
   position: relative;
 }
+
 ul{
     display: flex;
     justify-content: space-between;
@@ -65,11 +66,7 @@ margin-top: 0.5rem;
         font-size: 2.5rem;
         font-weight: bold;
     }
-    /* .registerBtn,.cartNavBtn{
-    padding: 1rem 1.9rem;
-    font-size: 1rem;
-    font-weight: 500;
-   } */
+   
     .registerBtn:hover,.cartNavBtn:hover{
         background-color: hsl(0, 0%, 100%);
         color: rgb(121, 94, 87);
@@ -81,10 +78,20 @@ margin-top: 0.5rem;
     }
     .cartNavBtn{
         margin-left: 6.5rem;
-        margin-right: 10rem;
+        margin-right: 8rem;
+        background-color:#fff;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
+    
     hr{
         width: 100%;
         border: 0.1rem solid rgb(77, 19, 5);
     }
+}
+.totalQuantity{
+    font-size:4rem;
+    font-weight: 600;
+    color: rgb(170, 30, 30);
+    display: block;
+    text-align: center;
 }

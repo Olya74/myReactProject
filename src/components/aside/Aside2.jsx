@@ -1,12 +1,16 @@
-import React from 'react'
+
+import Product from '../ProductsList/product/Product';
+import './aside.css'
+
 
 function Aside2() {
+  
+
   return (
     <div className="ad">
-      {" "}
-      New Arrivals <div className="product">pillow</div>
-      <div className="product">blanket</div>
-      <div className="product">bed linen</div>
+     <Product/>
+      <h2>Discounts</h2>
+    
     </div>
   );
 }

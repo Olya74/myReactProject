@@ -1,8 +1,8 @@
-import {useState} from 'react'
+
 import './main.css'
 import ProductsList from '../ProductsList/ProductsList'
 import Categories from '../categories/Categories';
-import categoriesArr from '../categoriesArr.js'
+import ShopingCart from '../cart/ShopingCart';
 function Main() {
  
   return (

@@ -1,35 +1,35 @@
 import { useContext } from "react";
-import { userContext } from "../../contexts/UserContext";
-
-function ShoppingCart() {
-  const { state, dispatch } = useContext(userContext);
-
-  const quantityTotal = state.oder.reduce((acc, p) => acc + p.quantity, 0);
+import { UserContext } from "../../contexts/UserContext";
+import "./shopingCart.css";
+function ShopingCart() {
+  const { state, dispatch } = useContext(UserContext);
 
   return (
-    <div id="cart">
-      <h2>Shopping Cart</h2>
-      <div>
-        {state.oder.length > 0 && (
-          <h2>
-            {" "}
-            {quantityTotal} products in your cart ,total price: $
-            {state.total.toFixed(2)} €
-          </h2>
-        )}
-      </div>
-      {state &&
-        state.oder.map((p) => (
-          <div key={p.id}>
-            {p.productName}: {p.quantity} x {p.price}
-            <input
-              type="checkbox"
-              onClick={() => dispatch({ type: "DELETE", payload: p.id })}
-            />
-          </div>
-        ))}
+    <div className="cartContainer">
+      {state.orders.length > 0 ? (
+        <ul className="cart">
+          <h3>Your cart:</h3>
+          <h3>Total quantity:{state.totalQuantity}</h3>
+          <h3>Total: {state.total}</h3>
+          <br />
+
+          {state.orders.map((order) => (
+            <li key={order.id}>
+              {order.name} - {order.quantity} - {order.price}
+              <button style={{ padding: 0,cursor:"pointer" }} onClick={() => dispatch({ type: "REMOVE_PRODUCT", payload: order.id })}>
+                <i
+                  className="fa-solid fa-trash"
+                  style={{ textAlign: "end" }}
+                ></i>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h1>Cart is empty</h1>
+      )}
     </div>
   );
 }
 
-export default ShoppingCart;
+export default ShopingCart;

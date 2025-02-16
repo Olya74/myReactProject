@@ -1,0 +1,17 @@
+.cartContainer{
+    flex: 1 1 30%;
+    z-index: 80;
+   
+}
+
+@media (min-width: 700px){
+    .cartContainer{
+        flex: 1 1 20%;
+    }
+    .cart{
+        display: flex;
+        flex-direction: column;
+        line-height: 2rem;
+        text-align: left;
+    }
+}

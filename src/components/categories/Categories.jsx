@@ -8,7 +8,7 @@ function Categories() {
 
   const selectCategory = (category) => {
 dispatch({type:'SELECT_CATEGORY',payload:category})
-    console.log(category);
+  
   }
 
   return (
@@ -19,12 +19,6 @@ dispatch({type:'SELECT_CATEGORY',payload:category})
         ))}
     </ul>
 
-    // <ul className="category-list">
-    //   {state.products.length > 0 &&
-    //     state.products.map((product) => (
-    //       <li key={product.id} onClick={()=>selectCategory(product)}>{product.category}</li>
-    //     ))}
-    // </ul>
   );
 }
 
