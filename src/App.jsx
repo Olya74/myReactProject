@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Layout from "./components/Layout/Layout";
 import UserList from "./pages/users/UserList";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 function App() {
 
   return (
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home />} />
-          <Route path="contact" element={<h1>Contact</h1>} />
+          <Route path="contact" element={<Contact/>} />
           <Route path="about" element={<About/>} />
     
           <Route path="users">

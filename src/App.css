@@ -1,18 +1,20 @@
 #root {
   min-width: 10rem;
 }
+html,body{
+  height: 100%;
+}
 img{
   max-width: 100%;
   height: auto;
   object-fit: cover;
 }
 .wrapper {
- min-width: 100%;
+min-width: 100%;
 margin: 0 auto;
 display: grid;
 grid-template-columns: repeat( 12, [col-start] 1fr);
-min-height: 100vh;
-grid-template-rows: auto  max-content 2fr max-content  auto ;
+grid-template-rows: auto  max-content 2fr max-content  auto 1fr;
 word-break: break-all;
 
 }
@@ -24,6 +26,9 @@ word-break: break-all;
 }
 .content{
         background: linear-gradient(90deg in hsl shorter hue, rgb(213, 219, 212), rgb(201, 191, 197), rgb(211, 203, 196)); 
+        padding: 1rem;
+        margin: 3rem;
+        
 }
 .add{
   grid-column: 9/ span 3;
@@ -39,7 +44,7 @@ word-break: break-all;
   }
   .side {
   grid-column: col-start/4 ;
-  grid-row: 4/span 1;
+  
   }
    .ad {
     grid-column: 6/ span 12;
@@ -160,6 +165,11 @@ word-break: break-all;
   }
   .main-footer {
     grid-column: col-start / span 12;
+    grid-row: 6;
+    font-size: 2rem;
+    i{
+      font-size: 2.5rem;
+    }
   }
   .product{
     flex-basis:24%;
@@ -167,12 +177,6 @@ word-break: break-all;
   }
   .lang{
     padding-right: 4rem;
-  }
-  .main-footer{
-    font-size: 2rem;
-    i{
-      font-size: 2.5rem;
-    }
   }
 }
 
@@ -203,4 +207,16 @@ word-break: break-all;
   padding: 0.3rem;
   text-wrap: nowrap;
   
+}
+
+.contact{
+  height: 71.9vh;
+  text-align: center;
+}
+
+div .contact{
+  background-image: url('./assets/images/banner.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center center;  
 }

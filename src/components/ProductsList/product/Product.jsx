@@ -1,10 +1,10 @@
-import {useContext} from 'react'
-import { UserContext } from '../../../contexts/UserContext'
-import  './product.css'
-
-
+import { useContext ,useState} from "react";
+import { UserContext } from "../../../contexts/UserContext";
+import "./product.css";
+import ProductAll from "./ProductAll";
 function Product() {
-  const { state,dispatch } = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
+ 
   return (
     <div className="productsWraper">
       {state.currentItems.length > 0 &&
@@ -12,23 +12,11 @@ function Product() {
           (itemsPr) =>
             Object.keys(itemsPr).includes("items") &&
             itemsPr.items.map((item) => (
-              <div className="product" key={item.id}>
-                <h6>{item.name}</h6>
-                {item.img && <img src={item.img[0]} alt={item.name} />}
-                <p>{item.price}</p>
-                <button
-                  onClick={() =>
-                    dispatch({ type: "ADD_PRODUCT", payload: item })
-                  }
-                >
-                  Add to cart
-                </button>
-              </div>
+            <ProductAll key={item.id} item={item} dispatch={dispatch}/>
             ))
         )}
     </div>
-    
   );
 }
 
-export default Product
+export default Product;

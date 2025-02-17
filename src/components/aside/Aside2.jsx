@@ -1,18 +1,12 @@
-
-import Product from '../ProductsList/product/Product';
-import './aside.css'
-
+import ProductsListWithDiscount from "../ProductsList/ProductsListWisthDiscount/ProductsListWithDiscount";
+import "./aside.css";
 
 function Aside2() {
-  
-
   return (
     <div className="ad">
-     <Product/>
-      <h2>Discounts</h2>
-    
+      <ProductsListWithDiscount />
     </div>
   );
 }
 
-export default Aside2
+export default Aside2;

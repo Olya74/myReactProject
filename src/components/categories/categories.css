@@ -13,9 +13,6 @@
 }
 
 @media (min-width: 700px) {
-     .content .category-list {
-   
-}
    .content .category-list li{
     flex-basis: 15%;
 }

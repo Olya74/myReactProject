@@ -8,7 +8,7 @@
     color: rgb(77, 19, 5);
     background-color: rgb(255, 255, 255);
     transition: transform 0.3s;
-    flex: 1 1 30%;
+    flex: 1 1 50%;
     max-width: 220px;
 }
 .product button{

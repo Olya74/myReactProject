@@ -1,117 +1,114 @@
-
-import './main.css'
-import ProductsList from '../ProductsList/ProductsList'
-import Categories from '../categories/Categories';
-import ShopingCart from '../cart/ShopingCart';
+import "./main.css";
+import ProductsList from "../ProductsList/ProductsList";
+import Categories from "../categories/Categories";
+import ShopingCart from "../cart/ShopingCart";
 function Main() {
- 
   return (
     <main className="content">
       <Categories />
       <ProductsList />
       <article>
-        <h3>Towels wholesale</h3>
+        <h3>Soft World</h3>
         <p>
-          Интернет-магазин «Оба-на» предлагает купить полотенца оптом в Одессе,
-          Херсоне, Киеве и других городах Украины. Мы работаем с ФЛП,
-          юридическими лицами, в полном соответствии с отечественным
-          законодательством, предлагаем доступную стоимость любого из наших
-          товаров (полотенец, пледов, постельного белья и т. д). Полотенца оптом
-          в Украине – это к нам!
+          The online store "Soft World" offers to buy towels wholesale in
+          Odessa, Kherson, Kyiv and other cities of Ukraine. We work with
+          private entrepreneurs, legal entities, in full compliance with
+          domestic legislation, we offer an affordable price for any of our
+          products (towels, blankets, bed linen, etc.). Towels wholesale in
+          Ukraine - come to us!
         </p>
-        <h3>Лучшие типы материалов для полотенец</h3>
+        <h3>Best Types of Towel Materials</h3>
         <p>
-          Основное требование к домашнему текстилю данного типа – высокая
-          впитываемость влаги, использование материалов, безопасных для здоровья
-          человека (лучше всего – натуральных), мягкая на ощупь структура ткани
-          изделия. Все это соблюдено в тех товарах, которые можно купить в
-          данном разделе нашего сайта. Лучшие полотенца оптом в Украине (цена –
-          самая конкурентоспособная) можно приобрести именно у нас – в
-          интернет-магазине домашнего текстиля «Оба-на»!
+          The main requirement for home textiles of this type is high moisture
+          absorption, the use of materials that are safe for human health
+          (preferably natural ones), and a soft to the touch fabric structure of
+          the product. All of this is observed in those products that can be
+          purchased in this section of our website. The best wholesale towels in
+          Ukraine (the price is the most competitive) can be purchased from us -
+          in the Oba-na home textile online store!
         </p>
-        <p>
-          От себя рекомендуем остановить свой выбор на следующих типах
-          материалов:
-        </p>
+        <p>We recommend choosing the following types of materials:</p>
         <ul>
-          <li>
-            хлопковые изделия (оптом можно приобрести любой по объемам партией);
-          </li>
-          <li>изготовленные из бамбуковой ткани.</li>
+          <li>cotton products (you can buy wholesale in any quantity);</li>
+          <li>made from bamboo fabric.</li>
         </ul>
         <p>
-          лучшие ткани, обеспечивающие не только износостойкость товарной
-          позиции, но и ее полное соответствие требованиям стандартов качества
-          ЕС и Украины.
+          the best fabrics, ensuring not only the durability of the product, but
+          also its full compliance with the requirements of the quality
+          standards of the EU and Ukraine.
         </p>{" "}
-        <h3>Купить полотенца оптом недорого, что предлагаем</h3>{" "}
+        <h3>Buy towels wholesale at a low price, what we offer</h3>{" "}
         <p>
-          Когда клиент пожелает купить полотенца оптом недорого в Украине, ему
-          стоит обратиться за помощью именно в нашу компанию. Сделать это
-          следует по нескольким причинам:
+          When a client wants to buy towels wholesale at a low price in Ukraine,
+          he should turn to our company for help. This should be done for
+          several reasons:
         </p>
         <ul>
-          <li>стоимость полотенец оптом предлагаем самую доступную;</li>{" "}
-          <li>выбор домашнего текстиля очень большой;</li>{" "}
-          <li>работаем с лучшими брендами Украины и Европы не первый год;</li>
-          <li>доставка в любой город Украины занимает минимум времени;</li>
+          <li>We offer the most affordable wholesale towel prices;</li>{" "}
+          <li>The choice of home textiles is very large;</li>{" "}
           <li>
-            менеджеры всегда дадут профессиональную консультацию клиенту, если
-            он не знает, какие полотенца оптом нужно купить.
+            We have been working with the best brands of Ukraine and Europe for
+            many years;
+          </li>
+          <li>Delivery to any city in Ukraine takes a minimum of time;</li>
+          <li>
+            Managers will always give professional advice to the client if he
+            does not know which towels to buy wholesale.
           </li>
         </ul>
         <p>
-          Выбор домашнего текстиля достаточно большой. В нашем ассортименте
-          представлены аксессуары:
+          The choice of home textiles is quite large. Our assortment includes
+          accessories:
         </p>{" "}
         <ul>
-          <li>для кухни;</li> <li>для сауны;</li> <li>банные; </li>
-          <li>для лица; </li>
-          <li>пляжные оптом недорого.</li>
+          <li>for the kitchen;</li> <li>for the sauna;</li> <li>bath;</li>
+          <li>for the face;</li>
+          <li>beach wholesale inexpensive.</li>
         </ul>{" "}
-        <p>Выбрать всегда есть из чего и по удобной для клиента цене!</p>
-        <h3>Полотенца оптом – аксессуар и предмет личной гигиены</h3>
         <p>
-          Полотенца оптом в Украине – достаточно востребованный товар, который
-          может принести неплохой доход при продаже конечному потребителю. Дело
-          в том, что этот вид домашнего текстиля используется не только в
-          качестве обязательного предмета личной гигиены, но и в качестве
-          аксессуара, подарка. Красивое полотенце – хороший подарок, который
-          будет приятен практически любому человеку.
+          There is always plenty to choose from and at a price convenient for
+          the client!
+        </p>
+        <h3>Wholesale towels - an accessory and personal hygiene item</h3>
+        <p>
+          Wholesale towels in Ukraine are a fairly popular product that can
+          bring a good income when sold to the end consumer. The fact is that
+          this type of home textiles is used not only as a mandatory personal
+          hygiene item, but also as an accessory, a gift. A beautiful towel is a
+          good gift that will be pleasant to almost anyone.
         </p>{" "}
-        <h3>Как оформить заказ </h3>
+        <h3>How to place an order </h3>
         <p>
-          Минимальный заказ – от 3-х полотенец (зависит от модели и типа
-          товара). Это дает возможность купить недорого полотенца оптом не
-          только с целью дальнейшей продажи конечному потребителю, но и для
-          личных нужд. Приобрести необходимые товары можно:
+          Minimum order - from 3 towels (depending on the model and type of
+          product). This makes it possible to buy inexpensive towels in bulk not
+          only for the purpose of further sale to the end consumer, but also for
+          personal needs. You can purchase the necessary goods:
         </p>
         <ul>
           <li>
-            воспользовавшись удобной формой заказа в режиме онлайн («корзина» на
-            сайте);
+            using the convenient online order form ("basket" on the website);
           </li>
           <li>
-            позвонив по нашему номеру телефона, который указан в шапке этой
-            страницы нашего сайта.
+            by calling our phone number, which is listed in the header of this
+            page of our website.
           </li>
         </ul>
         <p>
-          Каждый клиент может приобрести недорого любой домашний текстиль (не
-          только полотенца, но и другие товары) наиболее удобным для себя
-          способом.
+          Each client can purchase any home textiles inexpensively (not only
+          towels, but also other goods) in the most convenient way for
+          themselves.
         </p>
         <p>
-          Удобный пользовательский интерфейс сайта дает возможность сделать
-          заказ любому клиенту. Даже тому, кто не слишком хорошо разбирается в
-          интернете. Наши менеджеры помогут купить текстиль для дома недорого
-          оптом в Украине, исходя из потребностей клиента. Мы всегда готовы
-          ответить на вопросы, предложить именно тот товар, который будет
-          максимально удобен для клиента.
+          The user-friendly interface of the site allows any client to place an
+          order. Even those who are not very familiar with the Internet. Our
+          managers will help you buy home textiles inexpensively wholesale in
+          Ukraine, based on the client's needs. We are always ready to answer
+          questions, offer exactly the product that will be most convenient for
+          the client.
         </p>
       </article>
     </main>
   );
 }
 
-export default Main
+export default Main;
