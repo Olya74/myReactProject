@@ -31,6 +31,7 @@ const initialState = {
   totalQuantity: 0,
   discount: [],
   discountAll: [],
+  odersDiscount: [],
 };
 
 console.log("IS", initialState);
@@ -76,6 +77,13 @@ const reducer = (state, action) => {
           return product.category === action.payload.category;
         }),
       };
+    case "SEARCH":
+      return {
+        ...state,
+        currentItems: state.products.filter((product) =>
+          product.title.toLowerCase().includes(action.payload.toLowerCase())
+        ),
+      };
     case "ADD_PRODUCT": {
       if (state.orders.length === 0) {
         return {
@@ -113,9 +121,143 @@ const reducer = (state, action) => {
         }
       }
     }
+    case "ADD_PRODUCT_5": {
+      if (state.orders.length === 0) {
+        return {
+          ...state,
+          orders: [{ ...action.payload, quantity: 1 }],
+          total:
+            parseFloat(action.payload.price.slice(1)) -
+            parseFloat(action.payload.price.slice(1)) * 0.05,
+          isEmpty: false,
+          totalQuantity: 1,
+        };
+      } else {
+        const existingProduct = state.orders.find(
+          (p) => p.id === action.payload.id
+        );
 
-    case "REMOVE_PRODUCT":{
-      const product =  state.orders.find((p) => p.id === action.payload);
+        if (existingProduct) {
+          return {
+            ...state,
+            orders: state.orders.map((p) =>
+              p.id === action.payload.id
+                ? { ...p, quantity: p.quantity + 1 }
+                : p
+            ),
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.05),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        } else {
+          return {
+            ...state,
+            orders: [...state.orders, { ...action.payload, quantity: 1 }],
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.05),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        }
+      }
+    }
+    case "ADD_PRODUCT_10": {
+      if (state.orders.length === 0) {
+        return {
+          ...state,
+          orders: [{ ...action.payload, quantity: 1 }],
+          total:
+            parseFloat(action.payload.price.slice(1)) -
+            parseFloat(action.payload.price.slice(1)) * 0.1,
+          isEmpty: false,
+          totalQuantity: 1,
+        };
+      } else {
+        const existingProduct = state.orders.find(
+          (p) => p.id === action.payload.id
+        );
+
+        if (existingProduct) {
+          return {
+            ...state,
+            orders: state.orders.map((p) =>
+              p.id === action.payload.id
+                ? { ...p, quantity: p.quantity + 1 }
+                : p
+            ),
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.1),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        } else {
+          return {
+            ...state,
+            orders: [...state.orders, { ...action.payload, quantity: 1 }],
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.1),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        }
+      }
+    }
+    case "ADD_PRODUCT_50": {
+      if (state.orders.length === 0) {
+        return {
+          ...state,
+          orders: [{ ...action.payload, quantity: 1 }],
+          total:
+            parseFloat(action.payload.price.slice(1)) -
+            parseFloat(action.payload.price.slice(1)) * 0.5,
+          isEmpty: false,
+          totalQuantity: 1,
+        };
+      } else {
+        const existingProduct = state.orders.find(
+          (p) => p.id === action.payload.id
+        );
+
+        if (existingProduct) {
+          return {
+            ...state,
+            orders: state.orders.map((p) =>
+              p.id === action.payload.id
+                ? { ...p, quantity: p.quantity + 1 }
+                : p
+            ),
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.5),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        } else {
+          return {
+            ...state,
+            orders: [...state.orders, { ...action.payload, quantity: 1 }],
+            total:
+              state.total +
+              (parseFloat(action.payload.price.slice(1)) -
+                parseFloat(action.payload.price.slice(1)) * 0.5),
+            isEmpty: false,
+            totalQuantity: state.totalQuantity + 1,
+          };
+        }
+      }
+    }
+    case "REMOVE_PRODUCT": {
+      const product = state.orders.find((p) => p.id === action.payload);
       if (product.quantity === 1) {
         return {
           ...state,
@@ -128,16 +270,14 @@ const reducer = (state, action) => {
         return {
           ...state,
           orders: state.orders.map((p) =>
-            p.id === action.payload
-              ? { ...p, quantity: p.quantity - 1 }
-              : p
+            p.id === action.payload ? { ...p, quantity: p.quantity - 1 } : p
           ),
           total: state.total - parseFloat(product.price.slice(1)),
           totalQuantity: state.totalQuantity - 1,
         };
       }
     }
-    
+
     default:
       return state;
   }

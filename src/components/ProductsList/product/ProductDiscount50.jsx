@@ -9,7 +9,7 @@ function ProductDiscount50({ item ,dispatch}) {
         {item.img && <img src={item.img[0]} alt={item.name} />}
         <p>{item.price}</p>
         <button
-          onClick={() => dispatch({ type: "ADD_PRODUCT", payload: item })}
+          onClick={() => dispatch({ type: "ADD_PRODUCT_50", payload: item })}
         >
           Add to cart
         </button>

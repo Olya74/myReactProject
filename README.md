@@ -30,3 +30,9 @@
 ## Category
 - show
 - select
+
+## Discount 
+- add to card 
+- total sum - discount
+
+#### 
