@@ -26,7 +26,7 @@ function ShopingCart() {
           ))}
         </ul>
       ) : (
-        <h1>Cart is empty</h1>
+        <h2 style={{marginLeft:'2rem'}}>Cart is empty</h2>
       )}
     </div>
   );

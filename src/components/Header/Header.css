@@ -18,9 +18,11 @@
 }
 .logo{
  text-shadow: 0.1rem 0.1rem 0.1rem #fff;
+ text-wrap: nowrap;
 }
 .main-head h2{
   font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 500px){

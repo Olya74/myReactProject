@@ -1,3 +1,8 @@
+.side{
+   display: flex;
+    flex-direction: column;
+  }
+
 #side{
      display: flex;
      flex-direction: column;
@@ -11,12 +16,11 @@
     #side{
         display: flex;
         text-wrap: wrap;
-        flex-direction: column;
     }
     #side .cart{
         display: flex;
         flex-wrap: wrap;
-      width: 138px;
+      min-width: 138px;
   overflow-x: hidden;
     padding-left: 0;
     word-break: break-all;
@@ -25,18 +29,23 @@
 
 @media (min-width: 500px) {
     #side{
-       margin-top: 1rem;
-       flex-direction: column-reverse;
+        flex-direction: row; 
+        max-height: 15rem;
+    }
+    #side h2{
+        font-size: 2rem;
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 700px) { 
     #side{
-     flex-direction: row;
-
+     width: 100%;
+    position: absolute;
+    left: 0;
     }
      #side .cart{
     width: fit-content;
+
 }
 }
 .ad {
@@ -44,3 +53,4 @@
     padding: 1rem;
     color: #333;
 }
+ 

@@ -5,6 +5,7 @@ import { UserContext } from "../../contexts/UserContext";
 function Header() {
   const {state} = useContext(UserContext);
   return (
+   
     <header className="main-head">
       <div className="logo">
         <span id="logo">Textile</span>
@@ -16,6 +17,7 @@ function Header() {
         <span>en</span> <i className="fa-solid fa-caret-down" />
       </div>
     </header>
+
   );
 }
 

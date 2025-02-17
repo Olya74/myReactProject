@@ -1,16 +1,31 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    max-width:40rem;
+    margin: 1rem auto;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    color: #333;
+}
 .profile{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    flex: 1 1 10%;
     flex-wrap: wrap;
     text-wrap: wrap;
-}
+    };
+
 @media (min-width: 700px) {
-    .profile h3{
+    .profile h2{
         font-size: 2rem;
        
-    }
-    
+    } 
 }

@@ -9,12 +9,14 @@ function Aside() {
 
 
   return (
+   
     <aside className="side active">
       <div id='side' >
         {state.isLogginned && <Profile />}
         <ShoppingCart />
       </div>
     </aside>
+ 
   );
 }
 

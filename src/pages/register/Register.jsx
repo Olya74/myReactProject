@@ -1,5 +1,5 @@
 import "./register.css";
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import setMyTimeout from "../../helpers/setMyTimeout";
 import Success from "../../components/messages/Success";
 import Error from "../../components/messages/Error";
@@ -13,7 +13,7 @@ const PASSWORD_REGEX =
 
 function Register() {
   const navigate = useNavigate();
-  const {dispatch}=useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -22,14 +22,33 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [myError, setMyError] = useState("");
   const [success, setSuccess] = useState("");
+  const [showPass, setShowPass] = useState("password");
+  const [showConfirmPass, setShowConfirmPass] = useState("password");
+  const togglePasswordType = (e) => {
+    const el = e.target.previousElementSibling;
+    console.log(el);
+    if (el.id === "userpassword") {
+      setShowPass((prev) => (prev === "password" ? "text" : "password"));
+    } else if (el.id === "confirmPassword") {
+      setShowConfirmPass((prev) => (prev === "password" ? "text" : "password"));
+    } else {
+      return;
+    }
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setMyError("");
-      setSuccess("");
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timeout);
-  }, [myError, success]);
+  }, [myError]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSuccess("");
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, [success]);
 
   const sendUser = async (user) => {
     const { name, email, password } = user;
@@ -62,20 +81,22 @@ function Register() {
         throw new Error(`status: ${response.status}`);
       }
       const data = await response.json();
-      if(response.status===201){
-       dispatch({ type: "REGISTER", payload: {name:newUser.name,email:newUser.email} });
+      if (response.status === 201) {
+        dispatch({
+          type: "REGISTER",
+          payload: { name: newUser.name, email: newUser.email },
+        });
       }
-     
-      
-     
+
       setSuccess(data.message);
-      setMyTimeout(() => navigate("/"), 2200);
+      setMyTimeout(() => navigate("/"), 2000);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
+   
       <div className="register">
         {myError && <Error myError={myError} />}
         {success && <Success success={success} />}
@@ -83,15 +104,15 @@ function Register() {
           Have an account?
           <button onClick={(e) => navigate("/login")}>Log in</button>
         </div>
-        <section>
+        <section className="registerForm">
           <h2>Create a account</h2>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
               sendUser(newUser);
             }}
           >
-            <input id="1" hidden />
             <label htmlFor="username">Username:</label>
             <input
               type="text"
@@ -110,10 +131,11 @@ function Register() {
               }
               required
             />
-            <label htmlFor="userpassword">Password:</label>
+            <label htmlFor="userpassword" className="passwordShowReg">
+              Password:
+            </label>
             <input
-              type="text"
-              // type="password"
+              type={showPass}
               id="userpassword"
               name={newUser.password}
               onChange={(e) =>
@@ -121,15 +143,25 @@ function Register() {
               }
               required
             />
-            <label htmlFor="confirmPassword">Confirm Password:</label>
+            <i
+              className="fa-solid fa-eye  showPass1"
+              onClick={togglePasswordType}
+            ></i>
+            <label htmlFor="confirmPassword" className="passwordShowReg">
+              {" "}
+            </label>
+            Confirm Password:
             <input
-              type="text"
-              //  type="password"
+              type={showConfirmPass}
               id="confirmPassword"
               name={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
+            <i
+              className="fa-solid fa-eye  showPass2"
+              onClick={togglePasswordType}
+            ></i>
             <div className="policy">
               <input type="checkbox" /> I agree to the Terms of Service and
               Privacy Policy
@@ -137,7 +169,7 @@ function Register() {
             <button>Sign Up</button>
           </form>
         </section>
-    </div>
+      </div>
   );
 }
 

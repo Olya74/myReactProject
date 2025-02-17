@@ -3,8 +3,8 @@ body{
     
 }
 .register{
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     text-align: center;
      padding: 0.2rem 0.3rem;
     color: rgb(29, 8, 29);
@@ -12,6 +12,8 @@ body{
     border-radius: 0.4rem;
     box-shadow: 0 0 0.4rem 0.2rem rgb(235, 225, 222);
     transition: all 0.3s ease-in-out;
+    width: 100%;
+    margin: 0 auto;
 }
 .register:hover {
     background-color: #f1f1f1;
@@ -26,11 +28,46 @@ button{
 button:hover{
     background-color: #f5e6e6;
 }
+
+
+.showPass1{
+    position: relative;
+    bottom: 2.9rem;
+    left: 2px;
+}
+.showPass2{
+    position: relative;
+    bottom: 2.9rem;
+    left: -45px;
+}
+@media (min-width: 200px){
+    .register{
+        transition: all 0.6s;
+       
+    }
+    form {
+      margin-right: 1rem;
+    }
+    button{
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+    .policy{
+       display: flex;
+         justify-content: space-between;
+         align-items: center;
+    }
+}
 @media (min-width: 300px){
     .register{
         font-size: 1.5rem;
         padding: 1.5rem;
         transition: all 0.6s;
+    }
+     form {
+      margin-right: 2.6rem;
     }
     button{
         padding: 1rem 1.5rem;
@@ -42,6 +79,12 @@ button:hover{
        display: flex;
          justify-content: space-between;
          align-items: center;
+    }
+    .showPass1{
+        left:-40px;
+    }
+    .showPass2{
+        left: -110px;
     }
 }
 @media (min-width: 500px){
@@ -68,16 +111,54 @@ button:hover{
     }
     .question{
    margin-top: 1rem;
+   margin-right: 6.5rem;
+    }
+    .showPass1{
+        left:-90px;
+    }
+    .showPass2{
+        left: -90px;
     }
 }
 @media (min-width:699px){
     .question{
         margin-top: 4rem;
+         margin-right: 8.5rem;
+    }
+     form{
+        width: 20%;
     }
 }
-
+@media (min-width: 720px){
+    .showPass1{
+        left: -150px;
+    }
+    .showPass2{
+        left: -150px;
+    }
+}
+@media (min-width:950px){
+    .question{
+        margin-top: 7rem;
+        margin-right: 10rem;
+    }
+     .showPass1{
+        left: -220px;
+    }
+    .showPass2{
+        left: -220px;
+    }
+}
 @media (min-width:1198px){
     .question{
         margin-top: 7rem;
+         margin-right: 16rem;
+    }
+     .showPass1{
+        left: -220px;
+    }
+    .showPass2{
+        left: -220px;
     }
 }
+

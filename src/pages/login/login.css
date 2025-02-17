@@ -8,6 +8,7 @@
     border-radius: 0.4rem;
     box-shadow: 0 0 0.4rem 0.2rem rgb(235, 225, 222);
     transition: all 0.3s ease-in-out;
+    text-wrap: nowrap;
 }
 .login:hover{
     background-color: #f1f1f1;
@@ -82,9 +83,17 @@ button:hover{
     .login{
         width: 30%;
         padding: 2rem;
+        
     }
   button{
     font-size: 2rem;
     font-weight: bold;
   }
+}
+
+
+.passwordShow{
+    display: inline-flex;
+    align-items: center;
+    
 }

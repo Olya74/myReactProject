@@ -12,11 +12,11 @@
     max-width: 220px;
 }
 .product button{
-    padding: 0 1rem;
+    padding: 0.4rem 1.5rem;
     background-color: rgb(133, 114, 114);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
     margin-bottom: 1rem;
 }
@@ -34,16 +34,18 @@
 .productsWraper{
     display: flex;
     flex-wrap: wrap;
-   justify-content: space-around;
+    justify-content: space-around;
     gap: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 p{
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 .product h6{
   text-align: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 .product:hover{
     transform: scale(1.05);
