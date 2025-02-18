@@ -253,6 +253,14 @@ const reducer = (state, action) => {
         }
       }
     }
+    case "CLEAR_CART":
+      return {
+        ...state,
+        orders: [],
+        total: 0,
+        isEmpty: true,
+        totalQuantity: 0,
+      };
     case "REMOVE_PRODUCT": {
       const product = state.orders.find((p) => p.id === action.payload);
       if (product.quantity === 1) {

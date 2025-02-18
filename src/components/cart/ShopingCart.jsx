@@ -16,7 +16,12 @@ function ShopingCart() {
           {state.orders.map((order) => (
             <li key={order.id}>
               {order.name} - {order.quantity} - {order.price}
-              <button style={{ padding: 0,cursor:"pointer" }} onClick={() => dispatch({ type: "REMOVE_PRODUCT", payload: order.id })}>
+              <button
+                style={{ padding: 0, cursor: "pointer" }}
+                onClick={() =>
+                  dispatch({ type: "REMOVE_PRODUCT", payload: order.id })
+                }
+              >
                 <i
                   className="fa-solid fa-trash"
                   style={{ textAlign: "end" }}
@@ -24,9 +29,10 @@ function ShopingCart() {
               </button>
             </li>
           ))}
+          <button style={{padding:'1rem 0'}} onClick={()=>dispatch({type:'CLEAR_CART'})}>Clear Cart</button>
         </ul>
       ) : (
-        <h2 style={{marginLeft:'2rem'}}>Cart is empty</h2>
+        <h2 style={{ marginLeft: "2rem" }}>Cart is empty</h2>
       )}
     </div>
   );
