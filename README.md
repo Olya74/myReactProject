@@ -25,6 +25,7 @@
 - quantity(total and separately)
 - total sum
 - discount
+- clear cart
 
 
 ## Category
@@ -35,4 +36,4 @@
 - add to card 
 - total sum - discount
 
-#### 
+
