@@ -34,10 +34,7 @@ const initialState = {
   odersDiscount: [],
 };
 
-console.log("IS", initialState);
 const reducer = (state, action) => {
-  console.log("stateREDODERS:", state.oders);
-  console.log("action:", action);
   switch (action.type) {
     case "REGISTER":
       return {
@@ -77,13 +74,13 @@ const reducer = (state, action) => {
           return product.category === action.payload.category;
         }),
       };
-    case "SEARCH":
-      return {
-        ...state,
-        currentItems: state.products.filter((product) =>
-          product.title.toLowerCase().includes(action.payload.toLowerCase())
-        ),
-      };
+    // case "SEARCH":
+    //   return {
+    //     ...state,
+    //     currentItems: state.currentItems.map((itemsPr) =>
+    //       Object.keys(itemsPr).map((item) => item === action.payload)
+    //     ),
+    //   };
     case "ADD_PRODUCT": {
       if (state.orders.length === 0) {
         return {

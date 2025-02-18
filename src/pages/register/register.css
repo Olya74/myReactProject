@@ -33,12 +33,12 @@ button:hover{
 .showPass1{
     position: relative;
     bottom: 2.9rem;
-    left: 2px;
+    left: 132px;
 }
 .showPass2{
     position: relative;
     bottom: 2.9rem;
-    left: -45px;
+    left: 84px;
 }
 @media (min-width: 200px){
     .register{
@@ -81,10 +81,10 @@ button:hover{
          align-items: center;
     }
     .showPass1{
-        left:-40px;
+        left:180px;
     }
     .showPass2{
-        left: -110px;
+        left: 110px;
     }
 }
 @media (min-width: 500px){
@@ -114,10 +114,10 @@ button:hover{
    margin-right: 6.5rem;
     }
     .showPass1{
-        left:-90px;
+        left:100px;
     }
     .showPass2{
-        left: -90px;
+        left: 100px;
     }
 }
 @media (min-width:699px){
@@ -131,10 +131,10 @@ button:hover{
 }
 @media (min-width: 720px){
     .showPass1{
-        left: -150px;
+        left: 160px;
     }
     .showPass2{
-        left: -150px;
+        left: 160px;
     }
 }
 @media (min-width:950px){
@@ -143,10 +143,10 @@ button:hover{
         margin-right: 10rem;
     }
      .showPass1{
-        left: -220px;
+        left: 220px;
     }
     .showPass2{
-        left: -220px;
+        left: 220px;
     }
 }
 @media (min-width:1198px){
@@ -155,10 +155,10 @@ button:hover{
          margin-right: 16rem;
     }
      .showPass1{
-        left: -220px;
+        left: 200px;
     }
     .showPass2{
-        left: -220px;
+        left: 200px;
     }
 }
 
